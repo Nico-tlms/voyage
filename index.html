@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoyageHub – Trouvez les meilleurs bons plans voyage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#" class="logo">Voyage<span>Hub</span></a>
+      <nav class="main-nav">
+        <a href="#inspiration">Inspiration</a>
+        <a href="#offres">Offres</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+      <a class="cta-button" href="#offres">Découvrir les offres</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Trouvez le voyage idéal en un clin d'œil</h1>
+          <p>
+            VoyageHub est votre moteur de recherche de bons plans : comparez les prix des vols,
+            hôtels et séjours en quelques secondes et profitez des meilleures offres du web.
+          </p>
+          <form id="search-form" class="search-form" autocomplete="off">
+            <div class="field-group">
+              <label for="destination">Destination</label>
+              <input type="text" id="destination" name="destination" placeholder="Où souhaitez-vous partir ?" />
+            </div>
+            <div class="field-group">
+              <label for="type">Type de voyage</label>
+              <select id="type" name="type">
+                <option value="">Tous</option>
+                <option value="vol">Vol</option>
+                <option value="hotel">Hôtel</option>
+                <option value="sejour">Séjour</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="budget">Budget maximum (€)</label>
+              <input type="number" id="budget" name="budget" placeholder="Ex : 600" min="0" />
+            </div>
+            <button type="submit" class="cta-button">Rechercher</button>
+          </form>
+          <p class="trust-text">+ de 300 sites partenaires – données mises à jour en temps réel</p>
+        </div>
+        <div class="hero-card">
+          <h2>Bons plans en vedette</h2>
+          <ul id="featured-list" class="featured-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="inspiration" class="section alt">
+      <div class="container">
+        <h2>Pourquoi VoyageHub ?</h2>
+        <div class="features-grid">
+          <article class="feature">
+            <h3>Recherche intelligente</h3>
+            <p>Un moteur unique qui agrège vols, hôtels et séjours des plus grandes plateformes de voyage.</p>
+          </article>
+          <article class="feature">
+            <h3>Filtres avancés</h3>
+            <p>Affinez par budget, durée, style de voyage ou encore notes des voyageurs pour trouver l'offre parfaite.</p>
+          </article>
+          <article class="feature">
+            <h3>Avis vérifiés</h3>
+            <p>Accédez à des milliers d'avis fiables pour partir l'esprit léger vers votre prochaine destination.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="offres" class="section">
+      <div class="container">
+        <h2>Les meilleures offres du moment</h2>
+        <p class="section-subtitle">Résultats filtrés selon vos préférences. Chaque offre renvoie vers un partenaire de confiance.</p>
+        <div id="offers-grid" class="offers-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="destinations" class="section alt">
+      <div class="container">
+        <h2>Destinations tendance</h2>
+        <div class="destinations-grid">
+          <article class="destination-card">
+            <h3>Lisbonne, Portugal</h3>
+            <p>Séjours urbains à partir de 199 €</p>
+          </article>
+          <article class="destination-card">
+            <h3>Santorin, Grèce</h3>
+            <p>Hôtels de charme à partir de 139 €</p>
+          </article>
+          <article class="destination-card">
+            <h3>Bali, Indonésie</h3>
+            <p>Retraites bien-être à partir de 499 €</p>
+          </article>
+          <article class="destination-card">
+            <h3>Montréal, Canada</h3>
+            <p>Vols directs à partir de 349 €</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <h2>Ils ont trouvé leur bonheur avec VoyageHub</h2>
+        <div class="testimonials-grid">
+          <blockquote>
+            <p>"J'ai économisé plus de 150 € sur mon vol pour le Japon grâce à la comparaison instantanée !"</p>
+            <cite>— Amélie, Paris</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Une interface simple et des filtres très utiles, j'ai pu réserver un séjour tout compris en quelques minutes."</p>
+            <cite>— Karim, Lyon</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Le blog inspiration donne envie de partir chaque semaine, et les deals sont vraiment top."</p>
+            <cite>— Sophie, Toulouse</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section newsletter">
+      <div class="container newsletter-content">
+        <div>
+          <h2>Recevez les meilleurs bons plans chaque semaine</h2>
+          <p>Inscrivez-vous à notre newsletter pour profiter des alertes prix, guides d'inspiration et offres exclusives.</p>
+        </div>
+        <form class="newsletter-form">
+          <label class="sr-only" for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          <button type="submit" class="cta-button">Je m'inscris</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="current-year"></span> VoyageHub. Tous droits réservés.</p>
+      <div class="footer-links">
+        <a href="#">Programme d'affiliation</a>
+        <a href="#">Conditions générales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
