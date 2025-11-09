@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoyageHub – Trouvez les meilleurs bons plans voyage</title>
+  <title>VoyageHub – Trouvez des hôtels Booking.com au meilleur prix</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,11 +15,11 @@
       <a href="#" class="logo">Voyage<span>Hub</span></a>
       <nav class="main-nav">
         <a href="#inspiration">Inspiration</a>
-        <a href="#offres">Offres</a>
+        <a href="#offres">Hôtels</a>
         <a href="#destinations">Destinations</a>
         <a href="#newsletter">Newsletter</a>
       </nav>
-      <a class="cta-button" href="#offres">Découvrir les offres</a>
+      <a class="cta-button" href="#offres">Explorer les hôtels</a>
     </div>
   </header>
 
@@ -27,35 +27,51 @@
     <section class="hero">
       <div class="container hero-content">
         <div class="hero-text">
-          <h1>Trouvez le voyage idéal en un clin d'œil</h1>
+          <h1>Vos hôtels Booking.com au meilleur tarif</h1>
           <p>
-            VoyageHub est votre moteur de recherche de bons plans : comparez les prix des vols,
-            hôtels et séjours en quelques secondes et profitez des meilleures offres du web.
+            VoyageHub agrège les disponibilités et tarifs en direct de Booking.com. Entrez votre destination,
+            choisissez vos dates et comparez les meilleures options instantanément.
           </p>
-          <form id="search-form" class="search-form" autocomplete="off">
-            <div class="field-group">
+          <form
+            id="search-form"
+            class="search-form"
+            autocomplete="off"
+            data-default-destination="Paris"
+            data-default-adults="2"
+          >
+            <div class="field-group field-full">
               <label for="destination">Destination</label>
-              <input type="text" id="destination" name="destination" placeholder="Où souhaitez-vous partir ?" />
+              <input
+                type="text"
+                id="destination"
+                name="destination"
+                placeholder="Où souhaitez-vous séjourner ?"
+                required
+              />
             </div>
             <div class="field-group">
-              <label for="type">Type de voyage</label>
-              <select id="type" name="type">
-                <option value="">Tous</option>
-                <option value="vol">Vol</option>
-                <option value="hotel">Hôtel</option>
-                <option value="sejour">Séjour</option>
-              </select>
+              <label for="check-in">Arrivée</label>
+              <input type="date" id="check-in" name="check-in" />
             </div>
             <div class="field-group">
-              <label for="budget">Budget maximum (€)</label>
-              <input type="number" id="budget" name="budget" placeholder="Ex : 600" min="0" />
+              <label for="check-out">Départ</label>
+              <input type="date" id="check-out" name="check-out" />
             </div>
-            <button type="submit" class="cta-button">Rechercher</button>
+            <div class="field-group">
+              <label for="adults">Voyageurs</label>
+              <input type="number" id="adults" name="adults" min="1" value="2" />
+            </div>
+            <div class="field-group">
+              <label for="budget">Budget maximum (€ / nuit)</label>
+              <input type="number" id="budget" name="budget" placeholder="Ex : 150" min="0" />
+            </div>
+            <button type="submit" class="cta-button search-button">Chercher des hôtels</button>
           </form>
-          <p class="trust-text">+ de 300 sites partenaires – données mises à jour en temps réel</p>
+          <p id="search-status" class="search-status" aria-live="polite"></p>
+          <p class="trust-text">Offres en temps réel issues de Booking.com · Tarifs moyens par nuit TTC</p>
         </div>
         <div class="hero-card">
-          <h2>Bons plans en vedette</h2>
+          <h2>Sélections en vedette</h2>
           <ul id="featured-list" class="featured-list"></ul>
         </div>
       </div>
@@ -66,16 +82,16 @@
         <h2>Pourquoi VoyageHub ?</h2>
         <div class="features-grid">
           <article class="feature">
-            <h3>Recherche intelligente</h3>
-            <p>Un moteur unique qui agrège vols, hôtels et séjours des plus grandes plateformes de voyage.</p>
+            <h3>Résultats fiables</h3>
+            <p>Nous interrogeons directement l'API officielle Booking.com pour obtenir les tarifs et disponibilités.</p>
           </article>
           <article class="feature">
-            <h3>Filtres avancés</h3>
-            <p>Affinez par budget, durée, style de voyage ou encore notes des voyageurs pour trouver l'offre parfaite.</p>
+            <h3>Filtres personnalisés</h3>
+            <p>Filtrez par budget, dates, nombre de voyageurs et laissez-nous trouver les hôtels les plus adaptés.</p>
           </article>
           <article class="feature">
-            <h3>Avis vérifiés</h3>
-            <p>Accédez à des milliers d'avis fiables pour partir l'esprit léger vers votre prochaine destination.</p>
+            <h3>Affiliation transparente</h3>
+            <p>Chaque clic redirige vers Booking.com. Vous réservez chez eux, nous touchons une commission sans surcoût.</p>
           </article>
         </div>
       </div>
@@ -83,8 +99,11 @@
 
     <section id="offres" class="section">
       <div class="container">
-        <h2>Les meilleures offres du moment</h2>
-        <p class="section-subtitle">Résultats filtrés selon vos préférences. Chaque offre renvoie vers un partenaire de confiance.</p>
+        <h2>Résultats d'hôtels en direct</h2>
+        <p class="section-subtitle">
+          Affichez les meilleures options Booking.com selon vos critères. Les prix sont exprimés par nuit et
+          peuvent varier selon la période.
+        </p>
         <div id="offers-grid" class="offers-grid" aria-live="polite"></div>
       </div>
     </section>
@@ -95,19 +114,19 @@
         <div class="destinations-grid">
           <article class="destination-card">
             <h3>Lisbonne, Portugal</h3>
-            <p>Séjours urbains à partir de 199 €</p>
+            <p>Quartiers historiques et rooftops ensoleillés</p>
           </article>
           <article class="destination-card">
             <h3>Santorin, Grèce</h3>
-            <p>Hôtels de charme à partir de 139 €</p>
+            <p>Couchers de soleil sur la caldeira et hôtels troglodytes</p>
           </article>
           <article class="destination-card">
             <h3>Bali, Indonésie</h3>
-            <p>Retraites bien-être à partir de 499 €</p>
+            <p>Villas avec piscine et retraites bien-être</p>
           </article>
           <article class="destination-card">
             <h3>Montréal, Canada</h3>
-            <p>Vols directs à partir de 349 €</p>
+            <p>Week-ends gourmands et culture urbaine vibrante</p>
           </article>
         </div>
       </div>
@@ -115,18 +134,18 @@
 
     <section class="section testimonials">
       <div class="container">
-        <h2>Ils ont trouvé leur bonheur avec VoyageHub</h2>
+        <h2>Ils ont réservé avec VoyageHub</h2>
         <div class="testimonials-grid">
           <blockquote>
-            <p>"J'ai économisé plus de 150 € sur mon vol pour le Japon grâce à la comparaison instantanée !"</p>
+            <p>"Prix affichés identiques à Booking.com, mais j'ai gagné un temps fou pour comparer les quartiers."</p>
             <cite>— Amélie, Paris</cite>
           </blockquote>
           <blockquote>
-            <p>"Une interface simple et des filtres très utiles, j'ai pu réserver un séjour tout compris en quelques minutes."</p>
+            <p>"Les alertes budget sont top : j'ai trouvé un 4★ à Lisbonne en dessous de 120 € la nuit."</p>
             <cite>— Karim, Lyon</cite>
           </blockquote>
           <blockquote>
-            <p>"Le blog inspiration donne envie de partir chaque semaine, et les deals sont vraiment top."</p>
+            <p>"Idéal pour préparer un city-trip, toutes les infos essentielles sont regroupées sur une seule page."</p>
             <cite>— Sophie, Toulouse</cite>
           </blockquote>
         </div>
@@ -136,8 +155,8 @@
     <section id="newsletter" class="section newsletter">
       <div class="container newsletter-content">
         <div>
-          <h2>Recevez les meilleurs bons plans chaque semaine</h2>
-          <p>Inscrivez-vous à notre newsletter pour profiter des alertes prix, guides d'inspiration et offres exclusives.</p>
+          <h2>Recevez les bons plans hôtels Booking.com</h2>
+          <p>Inscrivez-vous pour obtenir nos sélections hebdomadaires, codes promo partenaires et alertes prix.</p>
         </div>
         <form class="newsletter-form">
           <label class="sr-only" for="email">Adresse e-mail</label>

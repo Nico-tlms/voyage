@@ -1,0 +1,18 @@
+{
+  "name": "voyagehub",
+  "version": "1.0.0",
+  "description": "Landing page Booking.com avec proxy Node pour afficher les hôtels en temps réel.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "booking",
+    "affiliation",
+    "voyage",
+    "hotel"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
