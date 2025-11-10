@@ -3,298 +3,354 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>KONIS · DJ & Producteur</title>
+    <title>KONIS · DJ Techno Immersif</title>
     <meta
       name="description"
-      content="KONIS est un DJ et producteur de musique house et techno. Explorez ses sets, sa vision et prenez contact pour vos événements."
+      content="Entrez dans l'univers techno de KONIS : live immersifs, mixes futuristes et expériences sensorielles pour clubs et festivals."
     />
-    <meta name="theme-color" content="#06030f" />
+    <meta name="theme-color" content="#05010f" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1Bf2mkxO6dT1p1YP+1uHjC1pI6BNc7G7SmHgNs26E40sp5Ian2yKZ7z1p3xU5e3w0w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
+    <canvas id="nebula-canvas" aria-hidden="true"></canvas>
+    <div class="noise" aria-hidden="true"></div>
     <header class="hero" id="accueil">
-      <div class="hero__overlay"></div>
-      <nav class="nav">
-        <div class="nav__brand">KONIS</div>
+      <nav class="nav" data-animate>
+        <a class="nav__brand" href="#accueil" aria-label="Accueil KONIS">
+          <span>K</span><span>O</span><span>N</span><span>I</span><span>S</span>
+        </a>
         <button
           class="nav__toggle"
-          aria-label="Ouvrir le menu"
           aria-expanded="false"
+          aria-label="Basculer la navigation"
           aria-controls="navigation"
         >
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__links" id="navigation">
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#univers">Univers</a></li>
+          <li><a href="#accueil">Univers</a></li>
+          <li><a href="#experience">Expérience</a></li>
           <li><a href="#mixes">Mixes</a></li>
           <li><a href="#agenda">Agenda</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav__social">
-          <a href="https://soundcloud.com" target="_blank" rel="noreferrer"
+          <a href="https://soundcloud.com" target="_blank" rel="noreferrer" aria-label="SoundCloud"
             ><i class="fa-brands fa-soundcloud" aria-hidden="true"></i
-            ><span class="sr-only">SoundCloud</span></a
-          >
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer"
+          ></a>
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"
             ><i class="fa-brands fa-instagram" aria-hidden="true"></i
-            ><span class="sr-only">Instagram</span></a
-          >
-          <a href="https://open.spotify.com" target="_blank" rel="noreferrer"
+          ></a>
+          <a href="https://open.spotify.com" target="_blank" rel="noreferrer" aria-label="Spotify"
             ><i class="fa-brands fa-spotify" aria-hidden="true"></i
-            ><span class="sr-only">Spotify</span></a
-          >
+          ></a>
         </div>
       </nav>
-      <div class="hero__content">
-        <p class="hero__eyebrow">DJ · HOUSE · TECHNO</p>
-        <h1>KONIS</h1>
-        <p class="hero__lead">
-          Voyage sonore entre house hypnotique et techno élégante. Des sets
-          taillés pour les nuits les plus intenses.
-        </p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#mixes">Écouter un mix</a>
-          <a class="btn btn--ghost" href="#contact">Réserver une date</a>
+      <div class="hero__grid">
+        <div class="hero__content" data-animate>
+          <p class="hero__badge">Voyage techno immersif</p>
+          <h1 class="hero__title" data-glitch="KONIS">KONIS</h1>
+          <p class="hero__lead">
+            DJ · Producteur · Architecte sonore. Des sets construits comme des odyssées, mêlant textures analogiques,
+            rythmiques industrielles et envolées mélodiques.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#mixes">Lancer un mix</a>
+            <a class="btn btn--ghost" href="#contact">Réserver une immersion</a>
+          </div>
+          <dl class="hero__stats">
+            <div>
+              <dt>Clubs et festivals</dt>
+              <dd>+45 scènes européennes</dd>
+            </div>
+            <div>
+              <dt>Signature</dt>
+              <dd>House cosmique & techno organique</dd>
+            </div>
+            <div>
+              <dt>Live hybride</dt>
+              <dd>Machines, synths modulaires et textures vocales</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="hero__visual" data-animate>
+          <div class="orb orb--primary"></div>
+          <div class="orb orb--secondary"></div>
+          <div class="hero__holo">
+            <div class="hero__wave"></div>
+            <div class="hero__wave hero__wave--alt"></div>
+            <p>Transmission live</p>
+          </div>
+          <div class="hero__ticker" aria-hidden="true">
+            <span>TECHNO</span>
+            <span>HOUSE</span>
+            <span>IMMERSION</span>
+            <span>LIVE</span>
+          </div>
         </div>
       </div>
-      <div class="hero__scroll">
-        <span>Faire défiler</span>
-        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      <div class="hero__scroll" aria-hidden="true">
+        <span>SCROLLEZ POUR ENTRER</span>
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
     </header>
 
     <main>
-      <section class="section section--light" id="univers">
+      <section class="section section--highlight" id="experience">
         <div class="container">
-          <div class="section__header">
-            <span class="section__eyebrow">L'ADN KONIS</span>
-            <h2>Un univers en clair-obscur</h2>
+          <header class="section__header" data-animate>
+            <span class="section__eyebrow">L'EXPÉRIENCE KONIS</span>
+            <h2>Une scénographie pensée comme un club itinérant</h2>
             <p>
-              KONIS façonne un son entre textures analogiques et rythmiques
-              futuristes. Chaque set est un récit, une montée progressive vers
-              la transe collective.
+              Chaque performance est conçue comme un voyage cinétique. Lignes de basse mouvantes, pads aériens et percussions
+              tranchantes sculptent un espace dans lequel le public disparaît.
             </p>
-          </div>
-          <div class="grid grid--features">
-            <article class="feature">
-              <div class="feature__icon">
-                <i class="fa-solid fa-wave-square"></i>
+          </header>
+          <div class="grid grid--pulse">
+            <article class="pulse" data-animate>
+              <div class="pulse__icon">
+                <i class="fa-solid fa-record-vinyl"></i>
               </div>
-              <h3>House hypnotique</h3>
+              <h3>DJ Set Techno</h3>
               <p>
-                Grooves profonds, voix éthérées et basses organiques qui
-                enveloppent la piste de danse.
+                Sélection pointue, transitions longues et tension constante. Idéal clubs underground, warehouse et afters.
               </p>
             </article>
-            <article class="feature">
-              <div class="feature__icon">
-                <i class="fa-solid fa-circle-nodes"></i>
+            <article class="pulse" data-animate>
+              <div class="pulse__icon">
+                <i class="fa-solid fa-sliders"></i>
               </div>
-              <h3>Techno organique</h3>
+              <h3>Live Hybride</h3>
               <p>
-                Percussions fines et textures modulaires pour une énergie
-                contrôlée et puissante.
+                Machines analogiques, textures vocales et improvisations modulaires pour un rendu brut et vivant.
               </p>
             </article>
-            <article class="feature">
-              <div class="feature__icon">
-                <i class="fa-solid fa-bolt"></i>
+            <article class="pulse" data-animate>
+              <div class="pulse__icon">
+                <i class="fa-solid fa-lights"></i>
               </div>
-              <h3>Énergie scénique</h3>
+              <h3>Scénographie</h3>
               <p>
-                Des lives immersifs, pensés pour connecter le public et créer un
-                moment hors du temps.
+                Visuels génératifs, lasers synchronisés et mapping immersif pour habiller vos nuits.
+              </p>
+            </article>
+            <article class="pulse" data-animate>
+              <div class="pulse__icon">
+                <i class="fa-solid fa-headphones"></i>
+              </div>
+              <h3>Expérience Audio 360°</h3>
+              <p>
+                Mixage spatialisé et diffusion multicanale pour des installations artistiques et musées.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section--dark" id="mixes">
+      <section class="section" id="mixes">
         <div class="container">
-          <div class="section__header">
-            <span class="section__eyebrow">SÉLECTION</span>
-            <h2>Mixes récents</h2>
+          <header class="section__header" data-animate>
+            <span class="section__eyebrow">CAPTATIONS LIVE</span>
+            <h2>Des sets pour voyager au-delà de la nuit</h2>
             <p>
-              Un aperçu des dernières captations. Plug in votre casque, montez le
-              volume et laissez-vous porter.
+              Pluggez votre casque, laissez les infrabasses envahir la pièce et partez pour 90 minutes d'intensité.
             </p>
-          </div>
-          <div class="grid grid--cards">
-            <article class="card">
-              <div class="card__media">
+          </header>
+          <div class="grid grid--mixes">
+            <article class="mix" data-animate>
+              <div class="mix__visual">
+                <span class="mix__tag">Warehouse</span>
                 <iframe
-                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123456789&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
-                  title="KONIS - Night Pulse"
+                  title="KONIS - Hyperion"
                   loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/123456789&color=%2300f0ff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
                   allow="autoplay"
                 ></iframe>
               </div>
-              <div class="card__body">
-                <h3>Night Pulse</h3>
-                <p>
-                  Une plongée nocturne entre house progressive et breakbeats
-                  galactiques.
-                </p>
+              <div class="mix__body">
+                <h3>Hyperion</h3>
+                <p>Progression hypnotique, synthés acides et drops cathartiques enregistrés en warehouse parisienne.</p>
               </div>
             </article>
-            <article class="card">
-              <div class="card__media">
+            <article class="mix" data-animate>
+              <div class="mix__visual">
+                <span class="mix__tag">Sunrise</span>
                 <iframe
-                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/987654321&color=%230099ff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
-                  title="KONIS - Raw District"
+                  title="KONIS - Eclipse"
                   loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/987654321&color=%23ff00ff&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
                   allow="autoplay"
                 ></iframe>
               </div>
-              <div class="card__body">
-                <h3>Raw District</h3>
-                <p>
-                  Une techno organique taillée pour les clubs. Rythmes secs,
-                  nappes éthérées, tension permanente.
-                </p>
+              <div class="mix__body">
+                <h3>Eclipse</h3>
+                <p>House cosmique, voix éthérées et groove lumineux pour clôturer un festival au lever du soleil.</p>
               </div>
             </article>
-            <article class="card">
-              <div class="card__media">
+            <article class="mix" data-animate>
+              <div class="mix__visual">
+                <span class="mix__tag">Club</span>
                 <iframe
-                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/192837465&color=%23fcb045&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
-                  title="KONIS - Sunrise Ritual"
+                  title="KONIS - Pulsar"
                   loading="lazy"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/111213141&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
                   allow="autoplay"
                 ></iframe>
               </div>
-              <div class="card__body">
-                <h3>Sunrise Ritual</h3>
-                <p>
-                  Un closing set de festival, lumineux et émotionnel pour saluer
-                  le lever du soleil.
-                </p>
+              <div class="mix__body">
+                <h3>Pulsar</h3>
+                <p>Techno organique, séquences modulaires et breaks industriels pour clubs intimistes.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section--gradient" id="agenda">
+      <section class="section section--timeline" id="agenda">
         <div class="container">
-          <div class="section__header">
-            <span class="section__eyebrow">ON TOUR</span>
-            <h2>Agenda</h2>
-            <p>
-              Retrouvez KONIS sur scène. Des clubs intimistes aux grands
-              festivals, l'expérience reste la même: une montée en puissance
-              maîtrisée.
-            </p>
-          </div>
+          <header class="section__header" data-animate>
+            <span class="section__eyebrow">AGENDA</span>
+            <h2>Trajectoire</h2>
+            <p>Retrouvez KONIS sur les scènes et festivals majeurs. Demandez une date privée ou corporate.</p>
+          </header>
           <div class="timeline">
-            <article class="timeline__item">
-              <div class="timeline__date">25 MAI</div>
-              <div class="timeline__content">
-                <h3>Warehouse · Nantes</h3>
-                <p>Support de la nuit Astropolis. Warm-up deep house & groovy.</p>
+            <article class="timeline__item" data-animate>
+              <div class="timeline__meta">
+                <span class="timeline__date">07 JUIN 2024</span>
+                <span class="timeline__tag">Paris · FR</span>
+              </div>
+              <div class="timeline__body">
+                <h3>Concrete Shadows</h3>
+                <p>Set closing sur la scène principale avec installation visuelle sur mesure.</p>
               </div>
             </article>
-            <article class="timeline__item">
-              <div class="timeline__date">08 JUIN</div>
-              <div class="timeline__content">
-                <h3>Festival Volt · Paris</h3>
-                <p>Closing techno atmosphérique sur la scène principale.</p>
+            <article class="timeline__item" data-animate>
+              <div class="timeline__meta">
+                <span class="timeline__date">22 JUIN 2024</span>
+                <span class="timeline__tag">Berlin · DE</span>
+              </div>
+              <div class="timeline__body">
+                <h3>Signal Festival</h3>
+                <p>Performance live hybride en collaboration avec le collectif visuel Lueur.</p>
               </div>
             </article>
-            <article class="timeline__item">
-              <div class="timeline__date">21 JUIN</div>
-              <div class="timeline__content">
-                <h3>Fête de la Musique · Lyon</h3>
-                <p>Set open-air, influences house 90's et disco futuriste.</p>
+            <article class="timeline__item" data-animate>
+              <div class="timeline__meta">
+                <span class="timeline__date">13 JUIL 2024</span>
+                <span class="timeline__tag">Marseille · FR</span>
+              </div>
+              <div class="timeline__body">
+                <h3>Deep Sea Rave</h3>
+                <p>Set house progressif au lever du soleil sur le rooftop du Mucem.</p>
+              </div>
+            </article>
+            <article class="timeline__item" data-animate>
+              <div class="timeline__meta">
+                <span class="timeline__date">27 JUIL 2024</span>
+                <span class="timeline__tag">Lisbonne · PT</span>
+              </div>
+              <div class="timeline__body">
+                <h3>Neon Coast</h3>
+                <p>Invité spécial du label Cosmos Frequencies pour une nuit techno estivale.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section--light" id="contact">
-        <div class="container contact">
-          <div class="contact__intro">
-            <span class="section__eyebrow">BOOKING</span>
-            <h2>Réservez KONIS</h2>
+      <section class="section section--immersive">
+        <div class="container">
+          <header class="section__header" data-animate>
+            <span class="section__eyebrow">IMMERSION VISUELLE</span>
+            <h2>Un univers graphique sur-mesure</h2>
             <p>
-              Vous organisez un club night, un festival ou un showcase privé ?
-              Parlons-en. KONIS est disponible pour des DJ sets, des live hybrides
-              et des masterclasses sur la production.
+              Visuels génératifs, typographies glitchées, lasers analogiques et scénographie modulable selon votre lieu et votre public.
             </p>
-            <ul class="contact__highlights">
-              <li><i class="fa-solid fa-star"></i> 10+ ans de scène</li>
-              <li><i class="fa-solid fa-headphones"></i> Préparation sur mesure</li>
-              <li><i class="fa-solid fa-globe"></i> Disponible en Europe</li>
-            </ul>
-            <div class="contact__social">
-              <a href="mailto:booking@konis.fr" class="btn btn--primary">Envoyer un mail</a>
-              <a href="https://konis.fr" class="btn btn--ghost" target="_blank" rel="noreferrer"
-                >Voir le site actuel</a
-              >
-            </div>
+          </header>
+          <div class="immersive">
+            <figure class="immersive__item" data-animate>
+              <div class="immersive__visual immersive__visual--01"></div>
+              <figcaption>Mapping vidéo sur structure industrielle</figcaption>
+            </figure>
+            <figure class="immersive__item" data-animate>
+              <div class="immersive__visual immersive__visual--02"></div>
+              <figcaption>Light show synchronisé aux textures sonores</figcaption>
+            </figure>
+            <figure class="immersive__item" data-animate>
+              <div class="immersive__visual immersive__visual--03"></div>
+              <figcaption>Ambiance club rétro-futuriste en 360°</figcaption>
+            </figure>
           </div>
-          <form class="contact__form">
-            <div class="form__field">
-              <label for="name">Nom</label>
-              <input id="name" name="name" type="text" placeholder="Votre nom" required />
+        </div>
+      </section>
+
+      <section class="section section--contact" id="contact">
+        <div class="container">
+          <div class="contact" data-animate>
+            <div class="contact__content">
+              <span class="section__eyebrow">BOOKING</span>
+              <h2>Invitez KONIS dans votre univers</h2>
+              <p>
+                Résidences, festivals, clubs, évènements corporate ou projets artistiques : construisons l'expérience sonore et visuelle qui marquera votre public.
+              </p>
+              <ul class="contact__list">
+                <li>
+                  <i class="fa-solid fa-envelope"></i>
+                  <a href="mailto:booking@konis.fr">booking@konis.fr</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone"></i>
+                  <a href="tel:+33600000000">+33 6 00 00 00 00</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Basé à Paris · Disponible Europe & Monde</span>
+                </li>
+              </ul>
             </div>
-            <div class="form__field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="vous@exemple.com" required />
-            </div>
-            <div class="form__field">
-              <label for="event">Événement</label>
-              <input id="event" name="event" type="text" placeholder="Nom de l'événement" />
-            </div>
-            <div class="form__field form__field--full">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Parlez-nous de votre projet"></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary">Envoyer</button>
-            <p class="form__note">Formulaire sans envoi automatique — contactez-nous par mail.</p>
-          </form>
+            <form class="contact__form" action="https://formspree.io/f/mayvlzje" method="post">
+              <label>
+                Nom / Structure
+                <input name="name" type="text" autocomplete="organization" required />
+              </label>
+              <label>
+                Email
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+              <label>
+                Date ou période
+                <input name="date" type="text" placeholder="Ex. 27 juillet, afterparty" />
+              </label>
+              <label>
+                Message
+                <textarea name="message" rows="4" placeholder="Parlez-nous de votre évènement"></textarea>
+              </label>
+              <button class="btn btn--primary" type="submit">Envoyer la demande</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer__content">
-        <div>
-          <h3>KONIS</h3>
-          <p>DJ & producteur — House / Techno</p>
-        </div>
+      <div class="container">
+        <p>© <span id="current-year"></span> KONIS · Tous droits réservés</p>
         <div class="footer__links">
-          <a href="#accueil">Accueil</a>
-          <a href="#univers">Univers</a>
-          <a href="#mixes">Mixes</a>
-          <a href="#agenda">Agenda</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer__social">
-          <a href="https://soundcloud.com" target="_blank" rel="noreferrer">SoundCloud</a>
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://open.spotify.com" target="_blank" rel="noreferrer">Spotify</a>
+          <a href="#accueil">Haut de page</a>
+          <a href="https://konis.fr" target="_blank" rel="noreferrer">konis.fr</a>
         </div>
       </div>
-      <p class="footer__copy">© <span id="year"></span> KONIS. Tous droits réservés.</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+    <script src="scripts/main.js" type="module"></script>
   </body>
 </html>
