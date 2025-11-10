@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoyageHub – Trouvez des hôtels Booking.com au meilleur prix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a href="#" class="logo">Voyage<span>Hub</span></a>
+      <nav class="main-nav">
+        <a href="#inspiration">Inspiration</a>
+        <a href="#offres">Hôtels</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+      <a class="cta-button" href="#offres">Explorer les hôtels</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Vos hôtels Booking.com au meilleur tarif</h1>
+          <p>
+            VoyageHub agrège les disponibilités et tarifs en direct de Booking.com. Entrez votre destination,
+            choisissez vos dates et comparez les meilleures options instantanément.
+          </p>
+          <form
+            id="search-form"
+            class="search-form"
+            autocomplete="off"
+            data-default-destination="Paris"
+            data-default-adults="2"
+          >
+            <div class="field-group field-full">
+              <label for="destination">Destination</label>
+              <input
+                type="text"
+                id="destination"
+                name="destination"
+                placeholder="Où souhaitez-vous séjourner ?"
+                required
+              />
+            </div>
+            <div class="field-group">
+              <label for="check-in">Arrivée</label>
+              <input type="date" id="check-in" name="check-in" />
+            </div>
+            <div class="field-group">
+              <label for="check-out">Départ</label>
+              <input type="date" id="check-out" name="check-out" />
+            </div>
+            <div class="field-group">
+              <label for="adults">Voyageurs</label>
+              <input type="number" id="adults" name="adults" min="1" value="2" />
+            </div>
+            <div class="field-group">
+              <label for="budget">Budget maximum (€ / nuit)</label>
+              <input type="number" id="budget" name="budget" placeholder="Ex : 150" min="0" />
+            </div>
+            <button type="submit" class="cta-button search-button">Chercher des hôtels</button>
+          </form>
+          <p id="search-status" class="search-status" aria-live="polite"></p>
+          <p class="trust-text">Offres en temps réel issues de Booking.com · Tarifs moyens par nuit TTC</p>
+        </div>
+        <div class="hero-card">
+          <h2>Sélections en vedette</h2>
+          <ul id="featured-list" class="featured-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="inspiration" class="section alt">
+      <div class="container">
+        <h2>Pourquoi VoyageHub ?</h2>
+        <div class="features-grid">
+          <article class="feature">
+            <h3>Résultats fiables</h3>
+            <p>Nous interrogeons directement l'API officielle Booking.com pour obtenir les tarifs et disponibilités.</p>
+          </article>
+          <article class="feature">
+            <h3>Filtres personnalisés</h3>
+            <p>Filtrez par budget, dates, nombre de voyageurs et laissez-nous trouver les hôtels les plus adaptés.</p>
+          </article>
+          <article class="feature">
+            <h3>Affiliation transparente</h3>
+            <p>Chaque clic redirige vers Booking.com. Vous réservez chez eux, nous touchons une commission sans surcoût.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="offres" class="section">
+      <div class="container">
+        <h2>Résultats d'hôtels en direct</h2>
+        <p class="section-subtitle">
+          Affichez les meilleures options Booking.com selon vos critères. Les prix sont exprimés par nuit et
+          peuvent varier selon la période.
+        </p>
+        <div id="offers-grid" class="offers-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="destinations" class="section alt">
+      <div class="container">
+        <h2>Destinations tendance</h2>
+        <div class="destinations-grid">
+          <article class="destination-card">
+            <h3>Lisbonne, Portugal</h3>
+            <p>Quartiers historiques et rooftops ensoleillés</p>
+          </article>
+          <article class="destination-card">
+            <h3>Santorin, Grèce</h3>
+            <p>Couchers de soleil sur la caldeira et hôtels troglodytes</p>
+          </article>
+          <article class="destination-card">
+            <h3>Bali, Indonésie</h3>
+            <p>Villas avec piscine et retraites bien-être</p>
+          </article>
+          <article class="destination-card">
+            <h3>Montréal, Canada</h3>
+            <p>Week-ends gourmands et culture urbaine vibrante</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="container">
+        <h2>Ils ont réservé avec VoyageHub</h2>
+        <div class="testimonials-grid">
+          <blockquote>
+            <p>"Prix affichés identiques à Booking.com, mais j'ai gagné un temps fou pour comparer les quartiers."</p>
+            <cite>— Amélie, Paris</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Les alertes budget sont top : j'ai trouvé un 4★ à Lisbonne en dessous de 120 € la nuit."</p>
+            <cite>— Karim, Lyon</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Idéal pour préparer un city-trip, toutes les infos essentielles sont regroupées sur une seule page."</p>
+            <cite>— Sophie, Toulouse</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section newsletter">
+      <div class="container newsletter-content">
+        <div>
+          <h2>Recevez les bons plans hôtels Booking.com</h2>
+          <p>Inscrivez-vous pour obtenir nos sélections hebdomadaires, codes promo partenaires et alertes prix.</p>
+        </div>
+        <form class="newsletter-form">
+          <label class="sr-only" for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          <button type="submit" class="cta-button">Je m'inscris</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>&copy; <span id="current-year"></span> VoyageHub. Tous droits réservés.</p>
+      <div class="footer-links">
+        <a href="#">Programme d'affiliation</a>
+        <a href="#">Conditions générales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

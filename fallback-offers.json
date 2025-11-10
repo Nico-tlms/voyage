@@ -1,0 +1,44 @@
+[
+  {
+    "id": "lisbonne-azulejos",
+    "title": "Hôtel Azulejos 4★ à Lisbonne",
+    "destination": "Lisbonne",
+    "type": "hotel",
+    "price": 118,
+    "currency": "EUR",
+    "partner": "Booking.com",
+    "duration": "par nuit",
+    "highlight": "Superbe 9,2/10 · Chiado",
+    "link": "https://www.booking.com",
+    "image": "",
+    "address": "Quartier du Chiado"
+  },
+  {
+    "id": "rome-trastevere",
+    "title": "Boutique Hotel Trastevere",
+    "destination": "Rome",
+    "type": "hotel",
+    "price": 134,
+    "currency": "EUR",
+    "partner": "Booking.com",
+    "duration": "par nuit",
+    "highlight": "Fabulous 8,9/10 · Terrasse rooftop",
+    "link": "https://www.booking.com",
+    "image": "",
+    "address": "Trastevere"
+  },
+  {
+    "id": "barcelona-mar",
+    "title": "Barcelone Bord de Mer",
+    "destination": "Barcelone",
+    "type": "hotel",
+    "price": 142,
+    "currency": "EUR",
+    "partner": "Booking.com",
+    "duration": "par nuit",
+    "highlight": "Très bien 8,3/10 · Face à la plage",
+    "link": "https://www.booking.com",
+    "image": "",
+    "address": "Barceloneta"
+  }
+]
